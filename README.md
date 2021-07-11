@@ -57,7 +57,15 @@ For example, after completing [Wes Bos](https://twitter.com/wesbos)' [Make a Jav
 
 In doing so, I quickly discovered I needed to extend Wes' use of event listeners.  In Wes' implementation, the addition & removal of classes on an appropriate div whenever a sound was played was handled entirely via key-driven events.  This worked fine when the sounds being sampled were extremely short, but longer samples resulted in a sub-par user experience.  I needed the appropriate div's class removed *after an audio element's sound stopped playing* not *after the appropriate div had completed a CSS transformation*.  
 
-Because this wasn't something Wes covered in his tutorial, I was forced to utilize my own problem-solving skills to implement a solution from scratch.  This gave me an opportunity to dive a bit deeper into event objects' properties, learn a new event type not covered in the tutorial (`ended`, associated with the `audio` element), further utilize Firefox's dev tools, and discover a new-to-me use case for data attributes: they could be used to connect the addition and removal of a class to *different events*!  Awesome!
+Because this wasn't something Wes covered in his tutorial, I was forced to utilize my own problem-solving skills to implement a solution from scratch.  This gave me an opportunity to:
+
+
+- Dive a bit deeper into event objects' properties;
+- Learn a new event type not covered in the tutorial (`ended`, associated with the `audio` element); 
+- Spend some quality time with Firefox's dev tools; 
+- Discover a new-to-me use case for data attributes: they could be used to connect the addition and removal of a class to *different events*!  
+
+Awesome!
 
 ### ☑️ INTEGRATE
 
