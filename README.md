@@ -11,7 +11,7 @@ This repo includes *both* my finished walk through of those tutorials as well as
 
 ## My Take On Tutorials / Avoiding Tutorial Hell / The IIAI Process
 
-*This is a bit long. Don't feel the need to read it unless you're really interested: this section is intended to help self-taught devs escape from 👹**TUTORIAL HELL**👹.  Feel free to just dive right into the repo if you like!*
+*This is a bit long. Don't feel the need to read it unless you're really interested: this section is intended to help self-taught devs escape from 🔥**TUTORIAL HELL**🔥.  Feel free to just dive right into the repo if you like!*
 
 Although online tutorials can be great for an *initial* intro to new JavaScript concepts, techniques, and design patterns, they suffer from real limitations.  There are a variety of reasons for this (the perverse incentives of the so-called "attention economy", presenters' lack of pedagogical training, the perils of unconscious competence, the audience's highly varied skill levels, the cul-de-sac of silly & trivial use cases, etc.) but they all point to the same danger: a disconnected patchwork of JavaScript snippets that demonstrate your ability to **duplicate someone else's code** rather than create your own.  
 
