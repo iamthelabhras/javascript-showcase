@@ -75,4 +75,4 @@ This last step takes place outside of the showcase repo.  It involves inserting 
 
 This process works for me.  It may not work for you.  Take what you can use and leave the rest...but please let me know your feedback!
 
-*GRMA agus go n-éirí libh!* 
+## *GRMA agus go n-éirí libh!* 
