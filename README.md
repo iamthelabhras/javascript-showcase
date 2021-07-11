@@ -3,13 +3,13 @@
 
 ## Repo Overview & Description
 
-👋 *Fáilte!* This is the requisite Github repo where I showcase the mini-JS projects I use to learn, hone, and demonstrate my vanilla JavaScript skills.  
+👋 *Fáilte!* This is the requisite Github repo where I showcase the mini-projects I use to learn, hone, and demonstrate my vanilla JavaScript skills.  
 
-My mini-JS project work flow is almost entirely based around tutorials I find on YouTube, on independent learning platforms, and elsewhere.  In future, this will change as I transition to a more client-and-side-project-driven work flow.  Stay tuned!
+My mini-project work flow is almost entirely based around tutorials I find on YouTube, on independent learning platforms, and elsewhere.  In future, this will change as I transition to a more client-and-side-project-driven work flow.  Stay tuned!
 
 This repo includes *both* my finished walk through of those tutorials as well as some kind of an extension/alternate application of the tutorials' materials.  I've tried to organize things such that, at a glance, it should be easy enough to tell which bits of JS code are from third-party tutorials (e.g. "javascript_30--drum_kit") and which bits of code are my own (e.g. "javscript_31--the_sounds_of_marathon_xmas_sampler").  If there's any confusion, just check the individual README.md's associated with each showcase item.
 
-## My Take On Tutorials / Avoiding Tutorial Hell / The IIAI Process
+## Avoiding Tutorial Hell Using The Imitate-Improve-Apply-Integrate ("IIAI") Process
 
 *This is a bit long. Don't feel the need to read it unless you're really interested: this section is intended to help self-taught devs escape from 🔥**TUTORIAL HELL**🔥.  Feel free to just dive right into the repo if you like!*
 
