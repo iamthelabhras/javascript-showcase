@@ -1,0 +1,6 @@
+// Tell Git to ignore these folders.
+
+// Tell Git to ignore these files.
+
+.DS_Store
+vim-markdown-preview.html
