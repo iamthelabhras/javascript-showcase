@@ -61,7 +61,7 @@ Because this wasn't something Wes covered in his tutorial, I was forced to utili
 
 ### ☑️ INTEGRATE
 
-This last step takes place outside of the showcase repo.  It involves inserting the applied tutorial code into its larger "parent" project.  Although, of course, I try to design things in a way that allows them to be dropped into an existing codebase with no unforseen consequences, learning to test for/catch/debug errors that arise out of new features is an important part of every dev's learning journey.  This final stage of my tutorial process ensures I don't forget that!
+This last step takes place outside of the showcase repo.  It involves inserting the applied tutorial code into its larger "parent" project.  Although, of course, I try to design things in a way that allows them to be dropped into an existing codebase with no unforseen consequences, learning to test for/catch/debug errors that arise out of new features is an important part of every dev's journey.  This final stage of my tutorial process ensures I don't forget that!
 
  And that's it.  That's the entire IIAI process I use to get the most of online tutorials & avoid getting trapped in tutorial hell.  
 
