@@ -1,6 +1,10 @@
 // Tell Git to ignore these folders.
 
+node_modules
+
+
+
 // Tell Git to ignore these files.
 
-.DS_Store
+.DS_Store/
 vim-markdown-preview.html
