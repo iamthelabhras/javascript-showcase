@@ -1,0 +1,2519 @@
+/* #region Global Resets */
+
+/* Erec Meyer's Reset */
+/* See: http://web.simmons.edu/~grovesd/comm244/notes/week4/reset.css */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Border Box Reset */
+* {
+  box-sizing: border-box;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+/* #endregion */
+
+/* #region Custom Fonts */
+/* Created using Font Quirrel: https://www.fontsquirrel.com/tools/webfont-generator */
+
+@font-face {
+  font-family: "Candy Cane";
+  src: url("../fonts/candycaneunregistered-gq3y-webfont.woff2") format("woff2"),
+    url("../fonts/candycaneunregistered-gq3y-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Xmas Sweater";
+  src: url("../fonts/xmassweaterstitch-xxyq-webfont.woff2") format("woff2"),
+    url("../fonts/xmassweaterstitch-xxyq-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* #endregion */
+
+/* #region Custom Variables */
+
+:root {
+  /* Candy Cane Loader Width & Height */
+  --loader_candy_width: 100px;
+  --loader_candy_height: 300px;
+  /* Title Card Margins (Top, Bottom, Left (Inner & Outer), Right (Inner & Outher), & Widths */
+  --title_cards--margin---top: 10vh;
+  --title_cards--margin---bottom: 10vh;
+  --title_cards--margin---left---far_left: 2.5vw;
+  --title_cards--margin---left---inner_left: 1.5vw;
+  --title_cards--margin---right---far_right: 2.5vw;
+  --title_cards--margin---right---inner_right: 1.5vw;
+  --title_cards--whole---width: 95vw;
+  --title_cards--halves---width: 46vw;
+  --title_cards--thirds---width: 29.7vw;
+  --title_cards--thirds---width: 32.3vw; /* Not sure why this value works ... 99.9% chance there's something wrong with my back-of-the-envelope math! */
+  --title_cards--two_thirds---width: 59.3vw;
+  --title_cards--fourths---width: 21.5vw;
+  --title_cards--three_fourths---width: PENDING;
+  /* Site Colors */
+  --body_bg: #1f253c;
+  --body_bg-lighter: #353b50;
+  --santa_green: #4dfd78;
+  --santa_green_rgba: rgba(77, 253, 120, 0.35);
+  --santa_red: #ec5e95;
+  --santa-red_rgba-1: rgba(236, 94, 149, 0.15);
+  --santa_red_rgba-2: rgba(236, 94, 149, 0.85);
+  --santa_white: #ffff;
+  --santa_yellow: #f9fb22;
+  --grey: #808080;
+  --black: #000000;
+  --black: rgba(1, 2, 3, 0.95);
+  /* Site Colors 8 Loaders -- Candy Cane Loaders */
+  --loader_bg_color: #1f253c;
+  --loader_candy_color_1: #d33144;
+  --loader_candy_color_2: #ffffee;
+  /* Site Colors -- Shadows) */
+  --audio_shadow: #006773;
+  --box_shadow-primary: #808080;
+  --box_shadow-primary: rgba(128, 128, 128, 0.5);
+  /* Borders */
+  --border_radius: 15px;
+  /* Fonts */
+  --sweater_font_family: "Xmas Sweater";
+  /* TO DO: Add sensible fallbacks to Sweater Font Family Custom Variable */
+  /* Animation -- Times */
+  --loader_anim_time: 8.5s;
+  --loader_fade_out_time: 2s;
+}
+
+/* #endregion */
+
+/* #region Site-Wide Elements */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.25;
+  background-color: var(--body_bg);
+  font-family: "Rubik", sans-serif;
+}
+
+table {
+  border-collapse: separate;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 20px;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 7.5em;
+  font-size: 6vw;
+  color: var(--santa_red);
+}
+
+h2 {
+  font-size: 2.65em;
+}
+
+h3 {
+  font-size: 1.35em;
+}
+
+/* MARATHON CHRISTMAS Title Card -- TITLE CARD: Site Name */
+
+h1.site_name {
+  font-family: "Candy Cane", cursive;
+  margin-top: 0;
+  margin-bottom: 2vh;
+}
+
+/* 2020 WPRBXmas Submissions Card */
+
+h2.mc_box-header--large {
+  font-size: 3.5em;
+  font-family: var(--sweater_font_family);
+  text-align: center;
+  font-style: italic;
+}
+
+/* All Other MARATHON CHRISTMAS Cards in index.html */
+
+h2.mc_box-header {
+  font-family: var(--sweater_font_family);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Now Playing On WPRBXmas Card -- Current Playlist -- Show Title */
+
+h4.playlist-title {
+  margin-top: 10px;
+  text-align: center;
+  font-family: "Candy Cane";
+  font-size: 2.5em;
+}
+
+p {
+  font-size: 1.15em;
+}
+
+a {
+  color: var(--black);
+  text-shadow: 0.5px 0.25px black;
+}
+
+ul {
+  padding: 30px;
+}
+
+img.social_media {
+  display: inline-block;
+  width: 20px;
+  height: 15px;
+  margin-left: -5px;
+}
+
+/* 2020 WPRBXMas Submissions Card, Chris Spohn WPRBXmas image */
+
+figcaption {
+  max-width: 25ch;
+  margin: 0 auto;
+  padding-top: 20px;
+  font-size: 0.75em;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+}
+
+/* #endregion */
+
+/* #region Site-Wide Components */
+
+div.wprbxmas_card--desc {
+  align-self: center;
+  max-width: 60ch;
+  margin: 0px 10px;
+  border-radius: var(--border_radius);
+  padding: 10px 20px;
+  background: var(--santa-red_rgba-1);
+}
+
+div.wprbxmas_card--instructions {
+  margin: 10px 0px;
+  border-radius: var(--border_radius);
+  padding: 10px 20px;
+  font-weight: 800;
+  text-align: center;
+  background: var(--santa_green_rgba);
+}
+
+div.wprbxmas_card--warning {
+  margin: 0px 10px;
+  border-radius: var(--border_radius);
+  padding: 10px 20px;
+  font-weight: 800;
+  text-align: center;
+  background: var(--santa_yellow);
+}
+
+/* #endregion */
+
+/* #region Flex Boxes -- Title Cards */
+
+.mc_box-flex_containers {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.mc_box-flex_container--whole {
+  width: var(--title_cards--whole---width);
+  margin-top: var(--title_cards--margin---top);
+  margin-bottom: var(--title_cards--margin---bottom);
+  margin-left: var(--title_cards--margin---left---far_left);
+  margin-right: var(--title_cards--margin---right---far_right);
+  border: 3px solid var(--black);
+  border-radius: 10px;
+  box-shadow: 2.75px 2.75px var(--box_shadow-primary);
+  box-shadow: 1.75px 1.75px var(--box_shadow-primary);
+  padding: 4vw;
+  background: var(--santa_white);
+}
+
+.mc_box-flex_container--halves {
+  width: var(--title_cards--halves---width);
+  margin-top: var(--title_cards--margin---top);
+  margin-bottom: var(--title_cards--margin---bottom);
+  border: 3px solid var(--black);
+  border-radius: 10px;
+  box-shadow: 2.75px 2.75px var(--box_shadow-primary);
+  box-shadow: 1.75px 1.75px var(--box_shadow-primary);
+  padding: 4vw;
+  background: var(--santa_white);
+}
+
+.mc_box-flex_container--halves:first-child {
+  margin-left: var(--title_cards--margin---left---far_left);
+  margin-right: var(--title_cards--margin---right---inner_right);
+}
+
+.mc_box-flex_container--halves:last-child {
+  margin-left: var(--title_cards--margin---left---inner_left);
+  margin-right: var(--title_cards--margin---right---far_right);
+}
+
+.mc_box-flex_container--thirds {
+  width: var(--title_cards--thirds---width);
+  margin-top: var(--title_cards--margin---top);
+  margin-bottom: var(--title_cards--margin---bottom);
+  border: 3px solid var(--black);
+  border-radius: 10px;
+  box-shadow: 2.75px 2.75px var(--box_shadow-primary);
+  box-shadow: 1.75px 1.75px var(--box_shadow-primary);
+  padding: 10px;
+  background: var(--santa_white);
+}
+
+.mc_box-flex_container--thirds:first-child {
+  margin-left: var(--title_cards--margin---left---far_left);
+  margin-right: var(--title_cards--margin---right---inner_right);
+}
+
+.mc_box-flex_container--thirds:last-child,
+#title_card--make_a_request {
+  margin-left: var(--title_cards--margin---left---inner_left);
+  margin-right: var(--title_cards--margin---right---far_right);
+}
+
+.mc_box-flex_container--two_thirds {
+  width: var(--title_cards--two_thirds---width);
+  margin-top: var(--title_cards--margin---top);
+  margin-bottom: var(--title_cards--margin---bottom);
+  border: 3px solid var(--black);
+  border-radius: 10px;
+  box-shadow: 2.75px 2.75px var(--box_shadow-primary);
+  box-shadow: 1.75px 1.75px var(--box_shadow-primary);
+  padding: 4vw;
+  background: var(--santa_white);
+}
+
+.mc_box-flex_container--two_thirds:first-child {
+  margin-left: var(--title_cards--margin---left---far_left);
+  margin-right: var(--title_cards--margin---right---inner_right);
+}
+
+.mc_box-flex_container--two_thirds:last-child {
+  margin-left: var(--title_cards--margin---left---inner_left);
+  margin-right: var(--title_cards--margin---right---far_right);
+}
+
+.mc_box-change_flex_direction-column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.mc_box-change_flex_direction-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.mc_box-justify_content-space_around {
+  justify-content: space-around;
+}
+
+.mc_box-justify_content-space_between {
+  justify-content: space-between;
+}
+
+.mc_box-justify_content-space_evenly {
+  justify-content: space-evenly;
+}
+
+.mc_box-justify_content-flex_start {
+  justify-content: flex-start;
+}
+
+.mc_box-justify_content-center {
+  justify-content: center;
+}
+
+.mc_box-align_items-center {
+  align-items: center;
+}
+
+.mc.box-no_flex_wrap {
+  flex-wrap: nowrap;
+}
+
+/* #endregion */
+
+/* #region CSS Loader */
+
+/* "Inspired" (big air quotes!) by Joe Harry's wonderful pen at: 
+      https://codepen.io/woodwoerk/pen/XXJoMa */
+
+div.loader--cover {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--body_bg);
+}
+
+div.loader--container {
+  overflow: hidden;
+  display: flex;
+  opacity: 0;
+  margin: calc(50vh - 150px) auto 0 auto;
+  width: var(--loader_candy_width);
+  height: var(--loader_candy_height);
+  border-radius: var(--loader_candy_width);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-color: var(--santa-red_rgba-1);
+  box-shadow: 40px 20px 15px -30px rgba(255, 0, 0, 0.1);
+  transform: rotate(90deg);
+  animation: load_candy var(--loader_anim_time)
+    cubic-bezier(0.87, -0.41, 0.19, 1.44) infinite;
+  animation-fill-mode: forwards;
+}
+
+div.loader--candy_cane {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  box-shadow: 0px 0px 10px rgba(255, 50, 0, 0.8) inset;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--loader_candy_color_2) 0 20px,
+    var(--loader_candy_color_1) 20px 40px
+  );
+  animation: load_loader var(--loader_anim_time) ease-in infinite;
+  animation-fill-mode: forwards;
+}
+
+div.loader--candy_cane::after {
+  content: "";
+  background-color: var(--loader_bg_color);
+  width: calc(var(--loader_candy_width) / 2);
+  height: calc(var(--loader_candy_height) - (var(--loader_candy_height) / 10));
+  border-radius: 50px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  display: flex;
+  align-self: flex-end;
+}
+
+div.loader--candy_cane::before {
+  content: "";
+  background-color: var(--loader_bg_color);
+  width: calc(var(--loader_candy_width) / 4);
+  height: calc(var(--loader_candy_height) * 0.7);
+  display: flex;
+  align-self: flex-end;
+}
+
+/* This is not in styles--main.css.  It is ref'd in candy_cane_loader.js. */
+
+div.loader--hidden {
+  animation: loader_hide var(--loader_fade_out_time);
+  animation-fill-mode: forwards;
+}
+
+/* #endregion */
+
+/* #region Mobile & Tablet Candy Cane Menu */
+
+/* .candy_can-links--open is not referenced in styles--main.css. */
+/* It is ref'd in candy_cane_nav-2.js. */
+
+div.candy_cane-toggle-hide {
+  display: initial;
+  height: auto;
+  width: auto;
+  visibility: visible;
+}
+
+div.candy_cane-toggle--hidden {
+  height: 0;
+  width: 0;
+  display: none;
+  visibility: hidden;
+}
+
+div.candy_cane-toggle {
+  position: fixed;
+  top: 0;
+  display: inline-block;
+  background: transparent;
+}
+
+div.candy_cane-icon {
+  color: var(--santa_red);
+  margin-top: 15px;
+  margin-left: 20px;
+  border-radius: 50%;
+  padding: 25px;
+  opacity: 0.5;
+  background: var(--body_bg-lighter);
+}
+
+div.candy_cane-icon:hover,
+div.candy_cane-icon:focus {
+  transform: rotate(360deg);
+}
+
+.candy_cane-links--container {
+  display: none;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  border-radius: var(--border_radius);
+  background: var(--body_bg-lighter);
+}
+
+.candy_cane-links--container--open {
+  display: flex;
+}
+
+.candy_cane-links--container span {
+  color: white;
+}
+
+.candy_cane-links--container span.candy_cane-link--close_menu {
+  font-size: 1.25rem;
+  color: var(--santa_yellow);
+}
+
+.candy_cane-links--container ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  list-style: none;
+}
+
+.candy_cane-links--container li {
+  margin: 10px;
+  border-radius: var(--border_radius);
+  text-align: center;
+  background: var(--body_bg);
+}
+
+.candy_cane-links--container li:first-child,
+.candy_cane-links--container li:last-child {
+  background: var(--santa_red_rgba-2);
+}
+
+.candy_cane-links--container li:hover,
+.candy_cane-links--container li:focus {
+  background: var(--santa_red);
+}
+
+.candy_cane-links--container a {
+  display: inline-block;
+  padding: 2rem 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* These utility classes are not referenced in styles--main.css.  */
+/* They are ref'd in candy_cane_nav.js. */
+
+.candy_cane-nav-hide_everything_but_nav--hidden {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+/* #endregion */
+
+/* #region Christmas Lights */
+
+/* Blinking Christmas lights were slightly tweaked from WebTutorials' YouTube Video, "CSS & Html Holiday Christmas Lights Blink Animation effect."
+  See: https://www.youtube.com/watch?v=Ls4_p8xHW1M */
+
+div.christmas_lights {
+  position: sticky;
+  top: 0;
+  background: var(--body_bg);
+  opacity: 0.9;
+  z-index: 9999;
+}
+
+div.christmas_lights ul {
+  padding: 0;
+  text-align: center;
+}
+
+div#christmas_lights--desktop,
+div#christmas_lights--laptop,
+div#christmas_lights--tablet,
+div#christmas_lights--mobile {
+  white-space: nowrap;
+}
+
+.strand li {
+  position: relative;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-counter: infinite;
+  animation-iteration-count: infinite;
+  list-style: none;
+  margin: 20px;
+  padding: 0;
+  display: block;
+  width: 12px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #ff0241;
+  box-shadow: 0px 4.6667px 24px 3px #f02241;
+  -webkit-animation-name: flash-1;
+  animation-name: flash-1;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+.strand li:nth-child(2n + 1) {
+  background: #42b261;
+  box-shadow: 0px 4.667px 24px 3px rgba(0, 255, 255, 0.5);
+  -webkit-animation-name: flash-2;
+  animation-name: flash-2;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+}
+
+.strand li:nth-child(4n + 2) {
+  background: #f9fb22;
+  box-shadow: 0px 4.667px 24px 3px #f9fb22;
+  -webkit-animation-name: flash-3;
+  animation-name: flash-3;
+  -webkit-animation-duration: 1.1s;
+  animation-duration: 1.1s;
+}
+
+.strand li:nth-child(odd) {
+  -webkit-animation-duration: 1.4s;
+  animation-duration: 1.4s;
+}
+
+.strand li:nth-child(3n + 1) {
+  -webkit-animation-duration: 1.4s;
+  animation-duration: 1.4s;
+}
+
+.strand li:before {
+  content: "";
+  position: absolute;
+  background: #222;
+  width: 10px;
+  height: 9.333px;
+  border-radius: 3px;
+  top: -4.667px;
+  left: 1px;
+}
+
+.strand li:after {
+  content: "";
+  top: -14px;
+  left: 9px;
+  position: absolute;
+  width: 52px;
+  height: 18.6667px;
+  border-bottom: solid #222 2px;
+  border-radius: 50%;
+}
+
+.strand li:last-child:after {
+  content: none;
+}
+
+.strand li:first-child {
+  margin-left: 40px;
+}
+
+/* Disable Christmas Lights on Mobile & Tablet While I Try to Solve Candy Cane Nav Menu Issues */
+
+div#christmas_lights--mobile,
+div#christmas_lights--tablet {
+  display: none;
+}
+
+/* CSS Rejiggering for Christmas Lights Wrapped in Hyperlinks Laptop & Desktop */
+
+/* Chrismas Lights: Colors & Flashing Speed (Linked To Keyframe Animations) */
+
+div#christmas_lights--desktop ul,
+div#christmas_lights--laptop ul {
+  height: 15vh;
+  overflow: visible;
+  background: var(--body_bg);
+}
+
+div#christmas_lights--desktop .strand a li,
+div#christmas_lights--laptop .strand a li {
+  z-index: 9999;
+  /* position: relative; */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-counter: infinite;
+  animation-iteration-count: infinite;
+  list-style: none;
+  margin: 30px;
+  margin-right: 0px;
+  padding: 0;
+  display: block;
+  width: 12px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #ff0241;
+  box-shadow: 0px 4.6667px 24px 3px #f02241;
+  -webkit-animation-name: flash-1;
+  animation-name: flash-1;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+div#christmas_lights--desktop .strand a:nth-child(2n + 1) li,
+div#christmas_lights--laptop .strand a:nth-child(2n + 1) li {
+  background: #42b261;
+  box-shadow: 0px 4.667px 24px 3px rgba(0, 255, 255, 0.5);
+  -webkit-animation-name: flash-2;
+  animation-name: flash-2;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  animation-duration: 1s;
+}
+
+div#christmas_lights--desktop .strand a:nth-child(4n + 2) li,
+div#christmas_lights--laptop .strand a:nth-child(4n + 2) li {
+  background: #f9fb22;
+  box-shadow: 0px 4.667px 24px 3px #f9fb22;
+  -webkit-animation-name: flash-3;
+  animation-name: flash-3;
+  -webkit-animation-duration: 1.1s;
+  animation-duration: 1.1s;
+}
+
+div#christmas_lights--desktop .strand a:nth-child(odd) li,
+div#christmas_lights--laptop .strand a:nth-child(odd) li {
+  -webkit-animation-duration: 1.4s;
+  animation-duration: 1.4s;
+}
+
+div#christmas_lights--desktop .strand a:nth-child(3n + 1) li,
+div#christmas_lights--laptop .strand a:nth-child(3n + 1) li {
+  -webkit-animation-duration: 1.4s;
+  animation-duration: 1.4s;
+}
+
+/* Christmas Lights: Bulb Sockets */
+
+div#christmas_lights--desktop .strand a li:before,
+div#christmas_lights--laptop .strand a li:before {
+  content: "";
+  position: absolute;
+  background: #222;
+  background: grey;
+  width: 10px;
+  height: 9.333px;
+  border-radius: 3px;
+  top: -4.667px;
+  left: 1px;
+}
+
+/* Christmas Lights: Connecting Wires */
+
+div#christmas_lights--desktop .strand a li:after,
+div#christmas_lights--laptop .strand a li:after {
+  content: "";
+  top: -14px;
+  left: 9px;
+  position: absolute;
+  width: 52px;
+  height: 18.6667px;
+  /* Original black conecting wires color. */
+  /* border-bottom: solid #222 2px; */
+  border-bottom: solid var(--grey) 2px;
+  border-radius: 50%;
+  transition: all ease-in-out 250ms;
+}
+
+/* Christmas Lights: Connecting Wires: Remove Wire From Last Light In Strand */
+
+div#christmas_lights--desktop .strand a:last-child li:after,
+div#christmas_lights--laptop .strand a:last-child li:after {
+  content: none;
+}
+
+div#christmas_lights--desktop .strand a li:first-child,
+div#christmas_lights--laptop .strand a li:first-child {
+  margin-left: 40px;
+}
+
+/* Christmas Lights: Nav Menu */
+
+div#nav_instructions {
+  width: 50%;
+  margin: 0 auto;
+  font-family: "Rubik", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  /* Not sure if I want the instructions to be white (bright, noticeable) or grey (much subtler). */
+  /* color: var(--santa_white); */
+  color: var(--grey);
+  text-align: center;
+}
+
+div#christmas_lights--desktop li,
+div#christmas_lights--laptop li {
+  transition: all 0.5s;
+  background: transparent;
+}
+
+/* Christmas Lights: Nav Menu -- Link Font & Color */
+
+div#christmas_lights--desktop li span,
+div#christmas_lights--laptop li span {
+  display: none;
+  color: var(--santa_red);
+  font-family: var(--sweater_font_family);
+  font-size: 18px;
+  transition: all ease-in-out 0.5s;
+}
+
+/* Christmas Lights: Nav Men -- Link Positioning Beneath Christmas Lights */
+
+div#christmas_lights--desktop li:hover span,
+div#christmas_lights--laptop li:hover span {
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  bottom: -35px;
+}
+
+/* Resize Christmas Lights on Hover */
+
+div#christmas_lights--desktop li:hover,
+div#christmas_lights--laptop li:hover {
+  transform: scale(1.5);
+}
+
+div#christ_lights--laptop li span:hover {
+  transform: scale(1);
+}
+
+/* Resize Connecting Wires When Christmas Lights Are Resized on Hovered*/
+
+div#christmas_lights--desktop .strand a:hover li:after,
+div#christmas_lights--laptop .strand a:hover li:after {
+  left: 10px;
+  top: -10px;
+  width: 33px;
+  transition: all ease-in-out 500ms;
+}
+
+/* Style & Position Donate To Jon Icon */
+
+i#christmas_lights--donate {
+  position: absolute;
+  top: 25px;
+  right: 60px;
+  color: var(--santa_white);
+  font-size: 35px;
+  opacity: 0.25;
+}
+
+/* #endregion */
+
+/* #region MARATHON CHRISTMAS Title Card */
+
+/* CSS "hacks" for audio player courtesy of Spike over at Stack Overflow: 
+  https://stackoverflow.com/questions/3794682/custom-css-for-audio-tag */
+
+div.mc_box-flex_container--whole#title_card--title_card {
+  margin-top: 0vh; /* Remove default MC Box top margin from Title Card to Close Gap Between Card & Christmas Light Nav Menu Closer */
+  margin-bottom: 10vh; /* No idea why this hack is necessary, but without it the space separting the Title Card & WPRBXmas Submissions does not line up with the rest of the site? */
+}
+
+/* TITLE CARD: Site Name */
+
+div#site_name {
+}
+
+/* TITLE CARD: Site Desc & Current Marathon Details Container */
+
+div#title_card--title_card--site_desc_and_current_marathon_container {
+}
+
+/* TITLE CARD: Welcome to Marathon Christmas Site Desc */
+
+div#title_card--site_desc {
+  /* width: 50%; */
+  display: flex;
+  flex-direction: column;
+  width: 34.05vw;
+  flex-grow: 0;
+}
+
+p#welcome_to_marathon_christmas {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+/* TITLE CARD: Current Marathon Details */
+
+div#title_card--current_marathon_details {
+  /* width: 25%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 17.025vw;
+}
+
+span.current_marathon_details--years_running {
+  font-family: var(--sweater_font_family);
+  font-size: 2.75rem;
+}
+
+span#current_marathon_details--years_running--facebook_rsvp {
+}
+
+div#title_card--title_card img.current_marathon_record {
+  align-self: center;
+  width: 175px;
+  height: 175px;
+  margin-top: 20px;
+  transform: scale(0.88) rotate(-20deg);
+}
+
+table.marathon_start_and_end_times {
+  margin-top: -20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: var(--santa_green_rgba);
+  border-radius: 15px;
+}
+
+th.current_marathon_details--dates,
+td.current_marathon_details--dates {
+  padding-right: 10px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: black;
+}
+
+th.current_marathon_details--times,
+td.current_marathon_details--times {
+  padding-right: 20px;
+  font-size: 1rem;
+  color: black;
+  font-weight: 800;
+}
+
+th.starts {
+  padding-right: 20px;
+  font-weight: 800;
+}
+
+td.ends {
+  font-weight: 800;
+}
+
+/* #endregion */
+
+/* #region WPRB Submissions Card */
+
+div#submissions-backgroun_image_and_guidelines_container {
+}
+
+div#submissions_text-background_info {
+  max-width: 55ch;
+  padding: 15px;
+  padding-top: 0;
+}
+
+span.submissions_ghosts {
+  font-family: "Xmas Sweater", serif;
+  font-style: italic;
+}
+
+div#submissions_image_and_caption_container {
+}
+
+img#submissions_image {
+}
+
+figcaption#submissions_caption {
+}
+
+div#submissions_text-rules {
+  max-width: 55ch;
+  padding: 15px;
+  padding-top: 0;
+}
+
+div.submission_dropdowns {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+  border-radius: 15px;
+  background: var(--santa_green_rgba);
+  text-transform: capitalize;
+  font-size: 1.05em;
+  font-weight: 700;
+}
+
+div.submission_dropdowns ul {
+  list-style: none;
+}
+
+div.submission_dropdowns li {
+  padding-bottom: 10px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+div.submission_dropdowns li::before {
+  content: "🎄";
+  font-style: normal;
+  padding-right: 20px;
+}
+
+p#typeform_button {
+}
+
+button.typeform {
+  text-decoration: none;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  height: auto;
+  padding: 0px 33px;
+  border-radius: 10px;
+  min-width: 50%;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 20px;
+  transition: all 1s;
+}
+/* #endregion */
+
+/* #region WPRBXmas Stream */
+
+div#title_card--wprbxmas_stream {
+}
+
+div#title_card--wprbxmas_stream div.wprbxmas_card--desc {
+  margin-bottom: 50px;
+}
+
+div#title_card--wprbxmas_stream div.wprbxmas_card--instructions {
+  align-self: center;
+  max-width: 60ch;
+}
+
+div#title_card--wprbxmas_stream iframe {
+  width: auto;
+  height: 450px;
+}
+
+/* #endregion */
+
+/* #region Listener Chat */
+
+div#title_card--listener_chat {
+  align-self: center;
+  height: 50%;
+}
+
+div#title_card--listener_chat div.wprbxmas_card--desc {
+  width: auto;
+}
+
+/* #endregion */
+
+/* #region Now Playing on WPRBXmas Card */
+
+div#title_card--now_playing_on_wprbxmas {
+}
+
+div.spinitron {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+div.spinitron h4 {
+  margin-bottom: 40px;
+}
+
+img.tune_in--radio_icon {
+  margin-right: 10px;
+}
+
+div#current_track_container {
+  justify-content: center;
+}
+
+div.spinitron div.spinitron-js-widget {
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Note: There are two of these in the HTML: one for mobile & one for tablet/laptop/desktop. */
+div.spinitron div.current_track {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px 30px;
+}
+
+div.spinitron details {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-weight: 600;
+  text-align: center;
+}
+
+div.spinitron details > div {
+  text-align: initial;
+}
+
+div.spinitron summary#playlist_summary {
+  font-size: 1.35em;
+  margin-bottom: 20px;
+}
+
+div#current_playlist_container {
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 10px; */
+}
+
+div#current_playlist_container div.spin,
+div#current_playlist_container div.info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+/* Note: There are two of these in the HTML: one for mobile & one for tablet/laptop/desktop. */
+
+div.spinitron div.current_playlist {
+  padding-bottom: 10px;
+}
+
+div.spinitron div.current_playlist p {
+  display: none;
+}
+
+div.spinitron div.current_playlist h3 {
+  display: none;
+}
+
+/* Spinitron Data */
+
+/* CSS is under Site Wide Elements */
+/* This is here to help visualize order, HTML structure of Spinitron data. */
+/* WPRB Show Title */
+h4.playlist-title {
+}
+/* Month Day, Year & Broadcast Start & End Times */
+div.datetime-block {
+  margin-top: -35px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+span.show-date {
+  display: block;
+}
+span.show-start {
+}
+span.show-end {
+}
+
+/* Div Containing All Playlist Data */
+div#public_spins {
+}
+
+/* Same Div As Above (Contains All Playlist Data) But Targeted By Class */
+div.spins {
+}
+
+/* Table Nested Within #public_spins Div Containing All Playlist Data */
+div#public_spins table.table {
+}
+
+/* Same table As Above (Nested Within #public_spins Div) But Targeted By Element */
+div.spins table {
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+/* These table rows are nested within a <tbody> element & contain data for ALL played tracks */
+tr.spin_item {
+  margin-bottom: 100px;
+}
+
+/* Nested within each <tr> element */
+tr td.spin-time {
+  color: black;
+}
+tr td.spin-time a {
+  margin-right: 10px;
+  color: var(--black) !important;
+  font-size: 1rem !important;
+}
+
+tr td.spin-time,
+/* tr.spin-art contains div.spin-art-container & div.spin-player */
+td tr.spin-art {
+}
+
+/* Nested Within Spin-Text But Contains span.artist, span.song, & div.info */
+div.spin {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+td.spin-text span.artist,
+td.spin-text span.song,
+td.spin-text span.release,
+td.spin-text span.parenthesis {
+  margin-left: 15px;
+}
+
+td.spin-text span.artist {
+  display: block;
+  /* margin-left: 15px; */
+  color: var(--black) !important;
+  font-size: 1.25em;
+}
+
+td.spin-text span.song {
+  color: var(--santa_red) !important;
+}
+
+td.spin-text span.release {
+  /* In Spinitron's API, "release" means album title */
+  display: block;
+  align-self: flex-end;
+  max-width: 35ch;
+  font-size: 0.85rem;
+  color: var(--black) !important;
+}
+
+span.release::before {
+  display: none;
+}
+
+td.spin-text span.parenthesis span.label {
+  font-size: 0.8rem;
+  color: var(--black) !important;
+}
+
+td.spin-text span.parenthesis span.released {
+  /* In Spinitron's API, "released" means year of release. */
+  font-size: 0.8rem;
+  color: var(--black) !important;
+}
+
+/* Nested with td.spint-text after div.spin, & div.info */
+div.note {
+  display: flex;
+  justify-content: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 45ch;
+  width: auto;
+  /* text-align: right; */
+  font-size: 0.85em;
+  font-weight: 800;
+  /* Having a hard time deciding what color this "note" should.  Leaving these commented out choices here for future reference, fiddling. */
+  /* background-color: var(--santa-red_rgba-1); */
+  /* background-color: var(--santa_red_rgba-2); */
+  background-color: var(--santa_yellow);
+  /* background-color: var(--santa_green_rgba); */
+  /* background-color: var(--santa_green); */
+  /* background-color: var(--grey); */
+  /* background-color: var(--santa_red); */
+  /* background-color: var(--black);
+  color: var(--santa_white); */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Spinitron Data Not Displayed in Now Playing on WPRBXmas Card */
+
+span.composer {
+  display: none;
+}
+
+/* #endregion */
+
+/* #region Make a Request Card */
+
+/* Resize Make a Request Card so that its larger "neighbor" doesn't stretch it out too much. */
+
+div#title_card--make_a_request {
+  align-self: center;
+}
+
+div#title_card--make_a_request div.wprbxmas_card--desc {
+  margin-bottom: 20px;
+}
+
+div#title_card--make_a_request iframe {
+  height: 500px;
+}
+
+/* #endregion */
+
+/* #region Ghosts of Marathons Past Card */
+
+div#title_card--ghosts_of_marathons_past {
+}
+
+/* Changed the flex-direction on this div to re-flow the archive dropdowns to column for ALL screen sizes.  Didn't like the way rows were looking on laptop & desktop. */
+div.ghosts_of_marathons_past-dropdowns {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-grow: 2;
+  gap: 0vh;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+div.ghosts-wprbxmas_stories,
+div.ghosts-wprbxmas_songs,
+div.ghosts-wprbxmas_playlists {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+div.ghosts-wprbxmas_stories h3,
+div.ghosts-wprbxmas_songs h3,
+div.ghosts-wprbxmas_playlists h3 {
+  border-bottom: 4px solid black;
+  margin: 0;
+  margin-top: 50px;
+}
+
+div.ghosts-wprbxmas_stories ul,
+div.ghosts-wprbxmas_songs ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+div.ghosts-wprbxmas_playlists ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div.ghosts-wprbxmas_stories li,
+div.ghosts-wprbxmas_songs li,
+div.ghosts-wprbxmas_playlists li {
+  margin-left: 10px;
+}
+
+/* div.ghosts-wprbxmas_stories {
+  display: flex;
+  flex-direction: column;
+  min-width: 12.5vw;
+  border: 1px solid black;
+}
+
+div.ghosts-wprbxmas_songs {
+  display: flex;
+  flex-direction: column;
+  min-width: 12.5vw;
+  border: 1px solid black;
+}
+
+div.ghosts-wprbxmas_playlists {
+  display: flex;
+  flex-direction: column;
+  min-width: 12.5vw;
+  border: 1px solid black;
+} */
+
+/* #endregion */
+
+/* #region WPRBPressmas Card */
+
+/* Resize WPRBPressmas Card so that its larger "neighbor" doesn't stretch it out too much. */
+div#title_card--wprbpressmas {
+  align-self: center;
+}
+
+div#title_card--wprbpressmas ul {
+  list-style: none;
+}
+
+div#title_card--wprbpressmas li {
+  padding-bottom: 10px;
+}
+
+div#title_card--wprbpressmas a.media_outlet {
+  text-decoration: none;
+}
+
+div#title_card--wprbpressmas a.media_outlet img {
+  width: 12px;
+  height: 12px;
+}
+
+/* #endregion */
+
+/* #region Jon Solomon's AND Jon Solobot's Tweets Cards */
+
+img.twitter_profile_pic {
+  display: flex;
+  align-self: center;
+  /* width: 150px; */
+  width: auto;
+  height: 20vh;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+div#twitter-jon_solomon summary,
+div#twitter-jon_solobot summary {
+  font-size: 1em;
+  text-align: center;
+}
+
+a.twitter-mention-button,
+a.twitter-follow-button {
+}
+
+a.twitter-line {
+}
+
+div#title_card--jon_solomons_tweets div.wprbxmas_card--warning,
+div#title_card--jon_solobots_tweets div.wprbxmas_card--warning {
+  margin-top: 25px;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+p.firefox_twitter_issue {
+  display: inline-block;
+  max-width: 50ch;
+  margin: 50px auto;
+  border-radius: var(--border_radius);
+  padding: 25px;
+  font-weight: 800;
+  font-size: 12px;
+  font-style: italic;
+  background: var(--santa_yellow);
+}
+
+/* #endregion */
+
+/* #region Jon Solomon's Tweets Card */
+
+div#title_card--jon_solomons_tweets {
+}
+
+div#solomon_twitter_card--twitter_widgets--tweet_to_and_follow {
+  margin-top: 25px;
+}
+
+div#solomon_twitter_card--twitter_widgets--twitter-timeline {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+/* #endregion */
+
+/* #region Jon Solobot's Tweets Card */
+
+div#title_card--jon_solobots_tweets {
+}
+
+div#solobot_twitter_card--twitter_widgets--tweet_to_and_follow {
+  margin-top: 25px;
+}
+
+div#solobot_twitter_card--twitter_widgets--twitter-timeline {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+/* #endregion */
+
+/* #region #WPRBXmas Tweets Card */
+
+div#title_card--wprbxmas_tweets {
+}
+
+div#title_card--wprbxmas_tweets div.wprbxmas_card--desc {
+  margin-bottom: 50px;
+}
+
+div#title_card--wprbxmas_tweets iframe {
+  width: auto;
+  height: 300px;
+  margin-top: 8.25vh;
+}
+
+div.embedsocial-hashtag {
+  height: 500px !important;
+  overflow: scroll;
+  border-bottom: 2px dotted black;
+}
+
+/* #endregion */
+
+/* #region WPRBXmap Card */
+
+div#title_card--wprbxmap {
+}
+
+/* #endregion */
+
+/* #region Footer */
+
+footer {
+  width: 100vw;
+  margin-top: var(--cards_margin_top);
+  margin-bottom: var(--cards_margin_bottom);
+  margin-left: -0.5vw;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  background: var(--body_bg-lighter);
+}
+
+div#title_card--footer {
+  padding: 25px;
+}
+
+/* Display Bouncing Santa on mobile only. */
+img#bouncing_santa {
+  display: none;
+  height: 125px;
+  width: 125px;
+  margin: 0 auto;
+}
+
+div#title_card--footer audio {
+  align-self: center;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  -webkit-border-radius: 7px 7px 7px 7px;
+  border-radius: 7px 7px 7px 7px;
+  width: 175px;
+  height: 25px;
+}
+
+div#title_card--footer audio:hover,
+div#title_card--footer audio:focus,
+div#title_card--footer audio:active {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.25);
+}
+
+div#title_card--footer audio:hover,
+div#title_card--footer audio:focus,
+div#title_card--footer audio:active {
+  -moz-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+  -moz-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+@-moz-document url-prefix() {
+  audio {
+    background: var(--black);
+    -moz-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    -moz-box-shadow: 2px 2px 4px 0px var(--audio_shadow);
+    box-shadow: 2px 2px 4px 0px var(--audio_shadow);
+    -moz-border-radius: 7px 7px 7px 7px;
+    border-radius: 7px 7px 7px 7px;
+  }
+}
+
+img.img_copyleft {
+  width: 25px;
+  height: 25;
+}
+
+span.copyleft {
+}
+
+p.spotify_disclaimer {
+  font-size: 12px;
+  text-align: center;
+}
+
+/* #endregion */
+
+/* #region Hacky Utility Classes */
+
+.dot {
+  font-family: "Courier New", Courier, monospace;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.spinitron_link {
+  padding-bottom: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+.italics {
+  font-style: italic;
+}
+
+.important_text {
+  font-weight: 800;
+}
+
+.now_playing {
+  width: 100%;
+  height: 100px;
+  color: white;
+  background: #1f253c;
+}
+
+.dev_border {
+  border: 2px solid blue;
+}
+
+.dev_background {
+  background: orange;
+}
+
+.hide {
+  display: none;
+}
+
+span.no_wrap {
+  white-space: nowrap;
+}
+
+span.typeform_button {
+  justify-self: center;
+}
+
+/* #endregion */
+
+/* #region Keyframes */
+
+@-webkit-keyframes flash-1 {
+  0%,
+  100% {
+    background: #f02241;
+    box-shadow: 0px 4.667px 24px 3px #f02241;
+  }
+  50% {
+    background: rgba(240, 34, 65, 0.4);
+    box-shadow: 0px 4.667px 24px 3px rgba(240, 35, 65, 0.2);
+  }
+}
+@keyframes flash-1 {
+  0%,
+  100% {
+    background: #f02241;
+    box-shadow: 0px 4.667px 24px 3px #f02241;
+  }
+  50% {
+    background: rgba(240, 34, 65, 0.4);
+    box-shadow: 0px 4.667px 24px 3px rgba(240, 35, 65, 0.2);
+  }
+}
+
+@-webkit-keyframes flash-2 {
+  0%,
+  100% {
+    background: #42b261;
+    box-shadow: 0px 4.667px 24px 3px #42b261;
+  }
+  50% {
+    background: rgba(66, 178, 97, 0.4);
+    box-shadow: 0px 4.667px 24px 3px rgba(66, 178, 97, 0.2);
+  }
+}
+
+@keyframes flash-2 {
+  0%,
+  100% {
+    background: #42b261;
+    box-shadow: 0px 4.667px 24px 3px #42b261;
+  }
+  50% {
+    background: rgba(66, 178, 97, 0.4);
+    box-shadow: 0px 4.667px 24px 3px rgba(66, 178, 97, 0.2);
+  }
+}
+
+@-webkit-keyframes flash-3 {
+  0%,
+  100% {
+    background: #f9fb22;
+    box-shadow: 0px 4.667px 24px 3px #f9fb22;
+  }
+  50% {
+    background: rgba(249, 251, 238, 0.4);
+    box-shadow: 0px 4.667px 24px 3px rgba(249, 251, 238, 0.2);
+  }
+}
+
+@keyframes flash-3 {
+  0%,
+  100% {
+    background: #f9fb22;
+    box-shadow: 0px 4.667px 24px 3px #f9fb22;
+  }
+  50% {
+    background: rgba(249, 251, 238, 0.4);
+    box-shadow: 0px 4.667px 24px 3px rgba(249, 251, 238, 0.2);
+  }
+}
+
+/* CSS Preloader */
+
+@keyframes load_loader {
+  0% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+
+@keyframes load_candy {
+  5% {
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(90deg) scale(1);
+  }
+  60% {
+    transform: rotate(-10deg) scale(1);
+  }
+  70% {
+    transform: rotate(20deg) scale(1);
+  }
+  80% {
+    transform: rotate(-10deg) scale(1);
+  }
+  90% {
+    transform: rotate(30deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-180deg) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes loader_hide {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* #endregion */
+
+/* #region MEDIA QUERIES -- ALL MEDIA QUERIES */
+
+/* #region MEDIA QUERIES -- Desktop */
+
+/* MEDIA QUERIES -- Desktop -- Desktop Show & Hides */
+
+@media screen and (min-width: 1281px) {
+  .responsive--show_mobile {
+    display: none !important;
+  }
+
+  .responsive--show_tablet {
+    display: none !important;
+  }
+
+  .responsive--show_laptop {
+    display: none !important;
+  }
+
+  .responsive--show_desktop {
+    display: initial !important;
+  }
+
+  .responsive--hide_desktop {
+    display: none !important;
+  }
+}
+
+/* #endregion */
+
+/* #region MEDIA QUERIES - Mobile */
+
+@media screen and (min-width: 0px) and (max-width: 575px) {
+  /* MEDIA QUERIES -- Mobile -- Mobile Show & Hides */
+
+  .responsive--show_tablet {
+    display: none !important;
+  }
+
+  .responsive--show_laptop {
+    display: none !important;
+  }
+
+  .responsive--show_desktop {
+    display: none !important;
+  }
+
+  .responsive--show_mobile {
+    display: initial !important;
+  }
+  .responsive--hide_mobile {
+    display: none !important;
+  }
+
+  div.christmas_lights {
+    position: initial;
+    top: initial;
+    background: var(--body_bg);
+  }
+
+  /* Mobile Nav Changes */
+
+  div.candy_cane-toggle {
+    position: fixed;
+    top: 0;
+    left: var(--title_cards--margin---left---far_left);
+    display: inline-block;
+    background: transparent;
+  }
+
+  /* Make Christmas lights "unsticky" */
+
+  div.christmas_lights {
+    position: initial;
+    background: var(--body_bg);
+    opacity: 0.9;
+  }
+
+  div.christmas_lights--mobile {
+    display: inline-block;
+  }
+
+  /* Boxify Flexbox layouts for mobile */
+
+  div.responsive--mobile_flex_direction_column {
+    flex-direction: column;
+  }
+
+  div#title_card--site_desc,
+  div#title_card--current_marathon_details {
+    width: 100%;
+  }
+
+  div#title_card--wprbxmas_stream,
+  div#title_card--listener_chat,
+  div#title_card--now_playing_on_wprbxmas,
+  div#title_card--make_a_request,
+  div#title_card--ghosts_of_marathons_past,
+  div#title_card--wprbpressmas,
+  div#title_card--jon_solomons_tweets,
+  div#title_card--jon_solobots_tweets,
+  div#title_card--wprbxmas_tweets,
+  div#title_card--wprbxmap {
+    width: var(--title_cards--whole---width);
+  }
+  div#title_card--listener_chat,
+  div#title_card--make_a_request,
+  div#title_card--wprbpressmas {
+    align-self: initial;
+  }
+
+  .mc_box-flex_container--halves:first-child,
+  .mc_box-flex_container--thirds:first-child,
+  .mc_box-flex_container--two_thirds:first-child {
+    margin-left: var(--title_cards--margin---left---far_left);
+    margin-right: 0px;
+  }
+
+  .mc_box-flex_container--halves:last-child,
+  .mc_box-flex_container--thirds:last-child,
+  #title_card--make_a_request,
+  .mc_box-flex_container--two_thirds:last-child {
+    margin-left: var(--title_cards--margin---left---far_left);
+    margin-right: 0px;
+  }
+
+  div.spinitron {
+    width: 85vw;
+    margin-left: 1vw;
+    margin-right: 2vw;
+  }
+
+  div.ghosts_of_marathons_past-container {
+    width: 95vw;
+    margin-top: 5vh;
+    margin-bottom: var(--title_cards--margin---bottom);
+    margin-left: 1vw;
+    margin-right: 2vw;
+  }
+
+  /* Resize elements for mobile */
+  /* Note: Remember that tweaked tablet nav menu elements are _not_ resized here! */
+
+  h2.mc_box-header {
+    font-size: 3em;
+    text-align: center;
+    font-style: italic;
+  }
+
+  div#title_card {
+    width: 95vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1vw;
+    margin-right: 2vw;
+    padding: 10px;
+  }
+
+  h1.site_name {
+    display: flex;
+    display: none;
+    justify-content: center;
+    width: 100%;
+    font-size: 8vw;
+  }
+
+  div#title_card--site_desc {
+    padding: 0px 20px;
+  }
+
+  p#welcome_to_marathon_christmas {
+    max-width: 45ch;
+    font-size: 1.15rem;
+  }
+
+  p.card-text {
+    max-width: 45ch;
+    font-size: 1.15rem;
+  }
+
+  div#submissions_card {
+    width: 95vw;
+    margin-left: 1vw;
+    margin-right: 2vw;
+    padding: 0px;
+  }
+
+  div#submissions-background_image_and_guidelines_container {
+    width: 100%;
+  }
+
+  div.submission_dropdowns {
+    font-size: 1rem;
+  }
+
+  div.submission_dropdowns ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  div.submission_dropdowns li {
+    padding-bottom: 10px;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  div.submission_dropdowns li::before {
+    content: "🎄";
+    font-style: normal;
+    padding-right: 10px;
+  }
+
+  div#title_card--now_playing_on_wprbxmas p:nth-of-type(1) {
+    text-align: left;
+  }
+
+  div#title_card--now_playing_on_wprbxmas p:nth-of-type(2) {
+    text-align: left;
+  }
+
+  div#current_track_container {
+    width: 100%;
+  }
+
+  div#current_playlist_container > * {
+    width: 100%;
+  }
+
+  img.tune_in--radio_icon {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  div.current-playlist h3 {
+    display: none;
+  }
+
+  div.spinitron div.current_playlist {
+    padding-bottom: 10px;
+  }
+
+  div.spinitron div.current_playlist p {
+    display: none;
+  }
+
+  div#current_playlist_container div.spin,
+  div#current_playlist_container div.info {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  div.public-spins {
+    width: 100%;
+    overflow: scroll;
+  }
+
+  h4.playlist-title {
+    margin-top: 10px;
+    text-align: center;
+    font-family: candy_cane_unregisteredRg;
+    font-size: 2.5em;
+  }
+
+  div.datetime-block {
+    margin-top: -35px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  span.show-date {
+    display: block;
+  }
+
+  td.spin-time {
+    display: none;
+  }
+
+  span.artist {
+    display: block;
+    font-size: 1.25em;
+  }
+
+  span.composer {
+    display: none;
+  }
+
+  span.release {
+    display: block;
+    align-self: center;
+    font-size: 0.7rem;
+  }
+
+  span.release::before {
+    display: initial;
+  }
+
+  span.label {
+    font-size: 0.7rem;
+  }
+
+  span.released {
+    font-size: 0.7rem;
+  }
+
+  div.spin {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+  }
+
+  div.note {
+    display: none;
+  }
+
+  div.ghosts_of_marathons_past-container h2 span {
+    white-space: normal;
+  }
+
+  div.ghosts_of_marathons_past-dropdowns {
+    margin-bottom: 20px;
+  }
+
+  footer div {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  footer audio {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  footer img#bouncing_santa {
+    display: initial;
+    height: 150px;
+    width: 125px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+
+  /* Hide non-mobile specific ids & values */
+
+  div.note {
+    display: none;
+    background-color: var(--santa-red_rgba-1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  /* Show mobile-specific ids & values */
+
+  /* div#christmas_lights--mobile {
+    display: initial;
+  } */
+
+  span#current_marathon_details--years_running--facebook_rsvp {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  div#title_card--current_marathon_details p.important_text {
+    max-width: 40ch;
+  }
+
+  /* Hide desktop-specific ids */
+
+  div#christmas_lights--desktop {
+    display: none;
+  }
+
+  img.current_marathon_record {
+    display: none;
+  }
+}
+
+/* #endregion */
+
+/* #region MEDIA QUERIES - Tablets */
+
+@media screen and (min-width: 577px) and (max-width: 1024px) {
+  /* MEDIA QUERIES - Tablet Show & Hides */
+
+  .responsive--show_mobile {
+    display: none !important;
+  }
+
+  .responsive--show_laptop {
+    display: none !important;
+  }
+
+  .responsive--show_desktop {
+    display: none !important;
+  }
+
+  .responsive--show_tablet {
+    display: initial !important;
+  }
+  .responsive--hide_tablet {
+    display: none !important;
+  }
+
+  .responsive--tablet_flex_direction_column {
+    flex-direction: column;
+  }
+
+  /* Tablet Nav Changes */
+
+  div.candy_cane-toggle {
+    margin-left: 3.75vw;
+  }
+
+  div#christmas_lights--tablet {
+    pointer-events: none;
+  }
+
+  responsive--tablet_flex_direction_column {
+    flex-direction: column;
+  }
+
+  div#title_card--wprbxmas_stream,
+  div#title_card--listener_chat,
+  div#title_card--now_playing_on_wprbxmas,
+  div#title_card--make_a_request,
+  div#title_card--ghosts_of_marathons_past,
+  div#title_card--wprbpressmas,
+  div#title_card--jon_solomons_tweets,
+  div#title_card--jon_solobots_tweets,
+  div#title_card--wprbxmas_tweets,
+  div#title_card--wprbxmap {
+    width: var(--title_cards--whole---width);
+  }
+  div#title_card--listener_chat,
+  div#title_card--make_a_request,
+  div#title_card--wprbpressmas {
+    align-self: initial;
+  }
+
+  .mc_box-flex_container--halves:first-child,
+  .mc_box-flex_container--thirds:first-child,
+  .mc_box-flex_container--two_thirds:first-child {
+    margin-left: var(--title_cards--margin---left---far_left);
+    margin-right: 0px;
+  }
+
+  .mc_box-flex_container--halves:last-child,
+  .mc_box-flex_container--thirds:last-child,
+  #title_card--make_a_request,
+  .mc_box-flex_container--two_thirds:last-child {
+    margin-left: var(--title_cards--margin---left---far_left);
+    margin-right: 0px;
+  }
+
+  /* Make Christmas lights "unsticky" */
+
+  div.christmas_lights {
+    position: initial;
+    top: inital;
+    background: var(--body_bg);
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  div.spinitron {
+    /* width : 90vw; */
+    /* The width of this div seems to be the culprint behind the persistent Spinitron CSS-IS-AWESOME-type issues? */
+    width: auto;
+  }
+}
+
+.mc_box-flex_container--halves:first-child,
+.mc_box-flex_container--thirds:first-child,
+.mc_box-flex_container--two_thirds:first-child {
+  margin-left: var(--title_cards--margin---left---far_left);
+  margin-right: 0px;
+}
+
+.mc_box-flex_container--halves:last-child,
+.mc_box-flex_container--thirds:last-child,
+#title_card--make_a_request,
+.mc_box-flex_container--two_thirds:last-child {
+  margin-left: var(--title_cards--margin---left---far_left);
+  margin-right: 0px;
+}
+
+/* MEDIA QUERIES - Tablets - iPad Pro */
+
+@media screen and (min-width: 1024px) {
+  div#title_card--nav--tablets li {
+    font-size: 1.25rem;
+  }
+}
+
+/* #endregion */
+
+/* #region MEDIA QUERIES - Laptop (13" Screens) */
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  /* MEDIA QUERIES - Laptop Show & Hides */
+
+  .responsive--show_mobile {
+    display: none !important;
+  }
+
+  .responsive--show_tablet {
+    display: none !important;
+  }
+
+  .responsive--show_desktop {
+    display: none !important;
+  }
+
+  .responsive--show_laptop {
+    display: initial !important;
+  }
+  .responsive--hide_laptop {
+    display: none !important;
+  }
+
+  div.ghosts_of_marathons_past-dropdowns {
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 100px;
+  }
+}
+/* #endregion */
+
+/* #region Sounds of Marathon Christmas Snippet Specific Styling */
+
+.container--keys {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.key {
+  border: 0.4rem solid var(--santa_white);
+  border: 0.4rem solid var(--body_bg-lighter);
+  border-radius: 0.5rem;
+  margin: 1rem;
+  font-family: "Xmas Sweater", sans-serif;
+  font-size: 2.25rem;
+  padding: 1rem 0.5rem;
+  transition: all 0.2s ease;
+  width: 10rem;
+  text-align: center;
+  color: var(--santa_yellow);
+  background: var(--body_bg);
+  text-shadow: 0 0 0.1rem var(--black);
+  box-shadow: 2px 2px 1px var(--box_shadow-primary);
+}
+
+.key:nth-child(even) {
+  transform: rotate(10deg);
+}
+
+.key:nth-child(odd) {
+  transform: rotate(-10deg);
+}
+
+.playing {
+  transform: scale(1.2) !important;
+  border-color: var(--santa_yellow);
+  box-shadow: 0 0 1rem var(--santa_white);
+}
+
+kbd {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.sound {
+  display: block;
+  margin-top: 10px;
+  padding-top: 5px;
+  background-color: var(--santa_red);
+  font-family: "Rubik", sans-serif;
+  font-size: 1.25rem;
+  color: var(--santa_white);
+}
+
+/* #endregion */
+
+/* #region MEDIA QUERIES - Browsers */
+.center
+/* MEDIA QUERIES -- Browsers -- Firefox */
+/* This is a browser hack that will stop working at some point!  See: http://browserhacks.com/#hack-12fab4e42897a8439c42d9e92d5f1047 */
+
+@supports (-moz-appearance: meterbar) and
+  (background-blend-mode: difference, normal) {
+  div.responsive--show_firefox {
+    display: initial;
+  }
+}
+
+/* #endregion */
+
+/* #endregion */
+
+@media screen and (max-width: 671px) {
+  /* Unrotate letter blocks on smaller screens. */
+  .key:nth-child(even),
+  .key:nth-child(odd) {
+    transform: rotate(0deg);
+  }
+}

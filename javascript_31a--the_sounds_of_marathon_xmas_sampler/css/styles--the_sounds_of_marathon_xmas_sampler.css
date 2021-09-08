@@ -1,0 +1,70 @@
+.container--keys {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.key {
+  border: 0.4rem solid var(--santa_white);
+  border: 0.4rem solid var(--body_bg-lighter);
+  border-radius: 0.5rem;
+  margin: 1rem;
+  font-family: "Xmas Sweater", sans-serif;
+  font-size: 2.25rem;
+  padding: 1rem 0.5rem;
+  transition: all 0.2s ease;
+  width: 10rem;
+  text-align: center;
+  color: var(--santa_yellow);
+  background: var(--body_bg);
+  text-shadow: 0 0 0.1rem var(--black);
+  box-shadow: 2px 2px 1px var(--box_shadow-primary);
+}
+
+.key:nth-child(even) {
+  transform: rotate(10deg);
+}
+
+.key:nth-child(odd) {
+  transform: rotate(-10deg);
+}
+
+.playing {
+  transform: scale(1.2) !important;
+  border-color: var(--santa_yellow);
+  box-shadow: 0 0 1rem var(--santa_white);
+}
+
+kbd {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.sound {
+  display: block;
+  margin-top: 10px;
+  padding-top: 5px;
+  background-color: var(--santa_red);
+  font-family: "Rubik", sans-serif;
+  font-size: 1.25rem;
+  color: var(--santa_white);
+}
+
+@media screen and (max-width: 671px) {
+  /* Unrotate letter blocks on smaller screens. */
+  .key:nth-child(even),
+  .key:nth-child(odd) {
+    transform: rotate(0deg);
+  }
+}
