@@ -1,9 +1,0 @@
-# Tell Git to ignore these folders:
-
-node_modules/
-
-# Tell Git to ignore these files:
-
-package-lock.json
-package.json
-.DS_Store
