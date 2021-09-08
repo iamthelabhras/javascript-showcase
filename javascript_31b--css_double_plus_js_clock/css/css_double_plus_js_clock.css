@@ -105,13 +105,13 @@ html {
 #minute_hand span.current_time {
 	display: inline-block;
 	margin-top: .5rem;
-	margin-left: 2.55rem;
+	margin-left: 1rem;
 	font-size: var(--minute_font_size);
 }
 
 #second_hand span.current_time {
 	display: inline-block;
-	margin-left: 7.25rem;
+	margin-left: 1.25rem;
 	font-size: var(--second_font_size);
 }
 
