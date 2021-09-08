@@ -4,6 +4,7 @@
 	--clock_border: #ED6101;
 	--clock_border_band: #f37c23; /* 10% lighter than clock_border. */
 	--black: #000000;
+	--numbers_black: #191919; /* 10% lighter than black. */
 	--hour_hand: #0160a1; /* 15% darker than clock_background. */ 
 	--minute_hand: #017ed4; /* 5% darker than clock_background. */;
 	--hour_font_size: 4rem;
@@ -83,6 +84,7 @@ html {
 }
 
 .current_time {
+	border-bottom: 2px solid var(--numbers_black);
 	text-shadow: 1px 1px 1px var(--black);
 }
 
