@@ -3,10 +3,11 @@
 	--clock_background: #018ded;
 	--clock_border: #ED6101;
 	--clock_border_band: #f37c23; /* 10% lighter than clock_border. */
+	--clock_shadow: rgba(0, 0, 0, 0.2); 
 	--black: #000000;
 	--numbers_black: #191919; /* 10% lighter than black. */
 	--hour_hand: #0160a1; /* 15% darker than clock_background. */ 
-	--minute_hand: #017ed4; /* 5% darker than clock_background. */;
+	--minute_hand: #017ed4; /* 5% darker than clock_background. */
 	--hour_font_size: 4rem;
 	--minute_font_size: 2.75rem;
 	--second_font_size: 1.75rem;
@@ -28,7 +29,7 @@ html {
 	padding: 2rem;
 	background: var(--clock_background);
 	box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px var(--clock_border_band), 
-		inset 0 0 10px var(--black), 0 0 10px rgba(0, 0, 0, 0.2);
+		inset 0 0 10px var(--black), 0 0 10pxv var(--clock_shadow);
 	z-index: -1;
 	}
 
@@ -58,7 +59,6 @@ html {
 	transform: rotate(90deg);
 	transition: all 0.25s ease-in-out; 
 }
-
 
 #hour_hand {
 	border-top-left-radius: 20%;
