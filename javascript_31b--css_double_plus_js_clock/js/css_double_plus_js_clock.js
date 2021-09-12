@@ -40,9 +40,16 @@ function setDate() {
   const hour = currentTime.getHours();
   const hourDegrees = (hour / 12) * 360 + 90;
   hourHand.style.transform = `rotate(${hourDegrees}deg)`;
-  hourHand.setAttribute("title", `${hour}` - 12);
-  hourHand.dataset.hour = hour - 12;
-  hourSpan.innerHTML = hour - 12;
+  // De-militarize hour hand.
+  if (hour > 12) {
+    hourHand.setAttribute("title", `${hour}` - 12);
+    hourHand.dataset.hour = hour - 12;
+    hourSpan.innerHTML = hour - 12;
+  } else {
+    hourHand.setAttribute("title", `${hour}`);
+    hourHand.dataset.hour = hour;
+    hourSpan.innerHTML = hour;
+  }
 }
 
 // Use setInterval to run setDate() every 1 seconds.
